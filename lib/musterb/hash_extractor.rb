@@ -3,7 +3,7 @@ require 'hashie'
 class Musterb::HashExtractor
   attr_reader :parent, :value
 
-  def initialize(value, parent)    
+  def initialize(value, parent)
     @value = to_string_access(value)
     @parent = parent
   end
@@ -19,7 +19,8 @@ class Musterb::HashExtractor
   private
   def to_string_access(hash)
     hash.dup.tap do |hash|
-      hash.extend Hashie::HashExtensions
+      # hash.extend Hashie::HashExtensions
+      hash.extend Hashie::Extensions
       hash.hashie_stringify_keys!
     end
   end
