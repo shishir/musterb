@@ -21,7 +21,7 @@ class Musterb::HashExtractor
     hash.dup.tap do |hash|
       # hash.extend Hashie::HashExtensions
       hash.extend Hashie::Extensions
-      hash.hashie_stringify_keys!
+      Hashie.stringify_keys hash
     end
   end
 end
