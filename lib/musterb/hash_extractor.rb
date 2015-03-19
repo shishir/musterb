@@ -18,10 +18,6 @@ class Musterb::HashExtractor
 
   private
   def to_string_access(hash)
-    hash.dup.tap do |hash|
-      # hash.extend Hashie::HashExtensions
-      hash.extend Hashie::Extensions
-      Hashie.stringify_keys hash
-    end
+   Hashie.stringify_keys hash
   end
 end
